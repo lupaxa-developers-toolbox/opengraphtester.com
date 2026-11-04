@@ -26,6 +26,9 @@ jobs:
     name: Link Checker
     uses: the-lupaxa-project/workflows/.github/workflows/reusable-link-checker.yml@master
     secrets: inherit
+    with:
+      # Local worker, a sample image, and the API origin. Its root is not a page.
+      whitelist: "127.0.0.1,https://example.com/card.png,opengraphtester.thelupaxaproject.workers.dev"
 
   generate-workflow-summary:
     name: Generate Workflow Summary
