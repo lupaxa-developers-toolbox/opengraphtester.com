@@ -13,6 +13,12 @@ if (form) {
     void preview(urlInput.value);
   });
 
+  urlInput.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" || event.isComposing || event.repeat) return;
+    event.preventDefault();
+    void preview(urlInput.value);
+  });
+
   tryExample?.addEventListener("click", () => {
     urlInput.value = "https://example.com";
     void preview(urlInput.value);
