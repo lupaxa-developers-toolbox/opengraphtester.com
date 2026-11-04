@@ -6,7 +6,7 @@ link will look when it is shared.
 <form id="preview-form" class="og-preview" data-worker-origin="https://opengraphtester.thelupaxaproject.workers.dev">
   <div class="og-entry">
     <input id="url" name="url" type="text" inputmode="url" spellcheck="false" autocomplete="url" placeholder="https://example.com" aria-label="Page URL">
-    <button class="md-button md-button--primary" type="submit" id="preview">Preview</button>
+    <button class="md-button md-button--primary" type="submit" id="preview-button">Preview</button>
   </div>
 </form>
 

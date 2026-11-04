@@ -1,23 +1,26 @@
-const form = document.querySelector("#preview-form");
+(() => {
+  const bindPreview = () => {
+    const form = document.querySelector("#preview-form");
+    if (!form || form.dataset.bound === "true") return;
+    form.dataset.bound = "true";
 
-if (form) {
-  const urlInput = document.querySelector("#url");
-  const previewButton = document.querySelector("#preview");
-  const tryExample = document.querySelector("#try-example");
-  const status = document.querySelector("#status");
-  const results = document.querySelector("#results");
-  let currentRequest = null;
+    const urlInput = form.querySelector("#url");
+    const previewButton = form.querySelector("button[type=submit]");
+    const tryExample = document.querySelector("#try-example");
+    const status = document.querySelector("#status");
+    const results = document.querySelector("#results");
+    let currentRequest = null;
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    void preview(urlInput.value);
-  });
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      void preview(urlInput.value);
+    });
 
-  urlInput.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter" || event.isComposing || event.repeat) return;
-    event.preventDefault();
-    void preview(urlInput.value);
-  });
+    urlInput.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" || event.repeat || event.keyCode === 229) return;
+      event.preventDefault();
+      void preview(urlInput.value);
+    });
 
   tryExample?.addEventListener("click", () => {
     urlInput.value = "https://example.com";
@@ -178,7 +181,14 @@ if (form) {
     status.textContent = message;
     status.classList.toggle("is-error", isError);
   }
-}
+  };
+
+  if (window.LupaxaPageLifecycle?.onPageRender) {
+    window.LupaxaPageLifecycle.onPageRender(bindPreview);
+  } else {
+    bindPreview();
+  }
+})();
 
 function fillCard(card, base, fields) {
   const image = card.querySelector("img");
