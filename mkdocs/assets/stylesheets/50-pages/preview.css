@@ -1,0 +1,258 @@
+.og-preview {
+  margin: 1.5rem 0 0.5rem;
+}
+
+.og-entry {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.og-entry input {
+  flex: 1 1 16rem;
+  min-width: 0;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-button);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+}
+
+#status {
+  min-height: 1.5em;
+}
+
+#status:empty {
+  min-height: 0;
+}
+
+#status.is-error {
+  color: #fda4af;
+}
+
+.og-cards,
+.og-tags {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.og-card,
+.og-tags section,
+.og-frame {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-card);
+  background: color-mix(in srgb, var(--md-default-bg-color) 88%, white);
+}
+
+.og-card,
+.og-tags section {
+  padding: 0.9rem;
+  min-width: 0;
+}
+
+.og-card h3,
+.og-tag-bar h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.og-frame {
+  overflow: hidden;
+  margin-top: 0.7rem;
+}
+
+.shot {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1.91 / 1;
+  background: color-mix(in srgb, var(--lupaxa-blue) 35%, black);
+}
+
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+.shot:not(.is-empty) .fallback {
+  display: none;
+}
+
+.copy {
+  padding: 0.75rem 0.9rem;
+}
+
+.domain {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0.25rem 0;
+  font-weight: 700;
+}
+
+.description {
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+}
+
+.og-card[data-card="linkedin"] .description,
+.og-card[data-card="imessage"] .description {
+  display: none;
+}
+
+.og-card[data-card="discord"] .og-frame {
+  border-left: 4px solid #5865f2;
+}
+
+.og-card[data-card="whatsapp"] .domain,
+.og-card[data-card="signal"] .domain,
+.og-card[data-card="imessage"] .domain,
+.og-card[data-card="telegram"] .domain,
+.og-card[data-card="slack"] .domain,
+.og-card[data-card="teams"] .domain {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.og-card[data-card="whatsapp"] .title,
+.og-card[data-card="signal"] .title,
+.og-card[data-card="imessage"] .title,
+.og-card[data-card="telegram"] .title,
+.og-card[data-card="slack"] .title,
+.og-card[data-card="teams"] .title,
+.og-card[data-card="whatsapp"] .description,
+.og-card[data-card="signal"] .description,
+.og-card[data-card="telegram"] .description,
+.og-card[data-card="slack"] .description,
+.og-card[data-card="teams"] .description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.og-card[data-card="whatsapp"] .title,
+.og-card[data-card="signal"] .title,
+.og-card[data-card="imessage"] .title,
+.og-card[data-card="teams"] .title,
+.og-card[data-card="whatsapp"] .description,
+.og-card[data-card="signal"] .description,
+.og-card[data-card="teams"] .description {
+  -webkit-line-clamp: 2;
+}
+
+.og-card[data-card="telegram"] .title,
+.og-card[data-card="slack"] .title {
+  -webkit-line-clamp: 2;
+}
+
+.og-card[data-card="telegram"] .description,
+.og-card[data-card="slack"] .description {
+  -webkit-line-clamp: 3;
+}
+
+.og-card[data-card="whatsapp"] .domain {
+  margin-top: 0.45rem;
+}
+
+.og-card[data-card="signal"] .og-frame,
+.og-card[data-card="teams"] .og-frame {
+  display: flex;
+  align-items: stretch;
+}
+
+.og-card[data-card="signal"] .shot,
+.og-card[data-card="teams"] .shot {
+  flex: 0 0 5.25rem;
+  width: 5.25rem;
+  aspect-ratio: 1;
+}
+
+.og-card[data-card="signal"] .copy,
+.og-card[data-card="teams"] .copy,
+.og-card[data-card="slack"] .copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.og-card[data-card="telegram"] .domain {
+  color: #2aabee;
+  font-weight: 650;
+}
+
+.og-card[data-card="slack"] .og-frame {
+  border-left: 4px solid #b9bbbe;
+}
+
+.og-card[data-card="slack"] .slack-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.og-card[data-card="slack"] .title {
+  color: #1d9bd1;
+}
+
+.og-card[data-card="slack"] .shot {
+  flex: 0 0 4.5rem;
+  width: 4.5rem;
+  aspect-ratio: 1;
+}
+
+.og-card[data-card="slack"] .shot.is-empty {
+  display: none;
+}
+
+.og-card[data-card="slack"].is-large .slack-row {
+  flex-direction: column;
+  gap: 0;
+}
+
+.og-card[data-card="slack"].is-large .shot {
+  flex: none;
+  order: 2;
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+}
+
+.og-tag-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.og-tag-bar button {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-button);
+  background: transparent;
+  color: var(--lupaxa-light-blue);
+  font: inherit;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.og-tags pre {
+  max-height: 26rem;
+  overflow: auto;
+}
+
+@media (max-width: 50rem) {
+  .og-cards,
+  .og-tags {
+    grid-template-columns: 1fr;
+  }
+}

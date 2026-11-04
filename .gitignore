@@ -7,11 +7,18 @@
 .worktrees/
 cursor-docs
 
+# Cloudflare
+.dev.vars
+.wrangler/
+
 # Make
 .makefiles/
 
 # MkDocs
 site/
+
+# Node
+node_modules/
 
 # Python
 .venv/

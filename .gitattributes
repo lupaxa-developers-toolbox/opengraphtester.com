@@ -2,6 +2,16 @@
 # GitHub Linguist
 # =============================================================================
 
+# Documentation site (content and theme)
+mkdocs/** linguist-documentation
+overrides/** linguist-documentation
+
+# Generated MkDocs output
+site/** linguist-generated=true
+
+# Vendored assets
+mkdocs/assets/vendor/** linguist-vendored
+
 # Versioning / makefile-skills tooling — not project source
 Makefile linguist-vendored
 makefiles.config linguist-vendored

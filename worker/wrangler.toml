@@ -1,0 +1,7 @@
+# The free plan caps each request at 10 ms of CPU on its own.
+# Do not set limits.cpu_ms. The free plan rejects that setting.
+name = "opengraphtester"
+main = "src/index.js"
+compatibility_date = "2025-04-01"
+workers_dev = true
+preview_urls = false
