@@ -1,3 +1,5 @@
+<div class="lupaxa-page-card" markdown>
+
 # How it Works
 
 Paste a public page address on Preview. The tester reads the tags in that
@@ -52,3 +54,5 @@ image.
 Public `http` and `https` pages. If you leave the scheme off, the
 address is read as `https`. An address with a username or password is
 refused, and so is a page on your own machine or on a private network.
+
+</div>

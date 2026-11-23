@@ -55,9 +55,8 @@ validation:
 theme:
   name: material
   custom_dir: overrides
-  font:
-    text: IBM Plex Sans
-    code: IBM Plex Mono
+  # IBM Plex is self-hosted. Do not load it from Google Fonts.
+  font: false
   language: en
   logo: assets/images/logo.png
   favicon: assets/images/favicon.png
@@ -89,6 +88,7 @@ plugins:
 
 hooks:
   - hooks/asset_cache_bust.py
+  - hooks/template_whitespace.py
 
 watch:
   - hooks
@@ -141,6 +141,7 @@ markdown_extensions:
 # =============================================================================
 
 extra_css:
+  - assets/stylesheets/00-fonts.css
   - assets/stylesheets/00-tokens.css
   - assets/stylesheets/10-base.css
   - assets/stylesheets/20-layout.css

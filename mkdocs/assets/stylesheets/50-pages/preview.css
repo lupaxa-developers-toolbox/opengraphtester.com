@@ -1,5 +1,24 @@
+.md-typeset .lupaxa-page-card > p:first-child {
+  margin-bottom: 0;
+}
+
 .og-preview {
-  margin: 1.5rem 0 0.5rem;
+  /* 20px matches the card padding. The extra half-line matches the space
+     above the paragraph text, which sits below the top of its line box. */
+  margin: 20px 0 0.3em;
+}
+
+/* The page card justifies body copy. Share cards and tag blocks stay left. */
+.md-typeset .lupaxa-page-card .og-card p,
+.md-typeset .lupaxa-page-card .og-tags p,
+.md-typeset .lupaxa-page-card #status {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+.md-typeset .lupaxa-page-card .og-tags pre > code {
+  padding: 0;
 }
 
 .og-entry {
@@ -13,17 +32,19 @@
   min-width: 0;
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: var(--lupaxa-radius-button);
-  background: var(--md-default-bg-color);
-  color: var(--md-default-fg-color);
+  background: var(--lupaxa-dark-blue);
+  color: var(--lupaxa-white);
   font: inherit;
   padding: 0.7rem 0.85rem;
 }
 
 #status {
+  margin: 20px 0 0;
   min-height: 1.5em;
 }
 
 #status:empty {
+  margin: 0;
   min-height: 0;
 }
 
@@ -43,7 +64,15 @@
 .og-frame {
   border: 1px solid var(--md-default-fg-color--lightest);
   border-radius: var(--lupaxa-radius-card);
-  background: color-mix(in srgb, var(--md-default-bg-color) 88%, white);
+}
+
+.og-card,
+.og-tags section {
+  background: linear-gradient(180deg, var(--lupaxa-card-bg-raised), var(--lupaxa-card-bg));
+}
+
+.og-frame {
+  background: var(--lupaxa-dark-blue);
 }
 
 .og-card,
@@ -56,6 +85,14 @@
 .og-tag-bar h3 {
   margin: 0;
   font-size: 0.95rem;
+}
+
+.md-typeset .og-card h3 {
+  text-decoration: underline;
+  text-decoration-color: var(--lupaxa-light-blue);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.12em;
+  text-decoration-skip-ink: auto;
 }
 
 .og-frame {
@@ -235,19 +272,29 @@
   margin-bottom: 0.6rem;
 }
 
-.og-tag-bar button {
-  border: 1px solid var(--md-default-fg-color--lightest);
-  border-radius: var(--lupaxa-radius-button);
-  background: transparent;
-  color: var(--lupaxa-light-blue);
-  font: inherit;
-  padding: 0.35rem 0.7rem;
-  cursor: pointer;
+.og-tag-bar .md-button {
+  flex: none;
+  margin: 0;
+  font-family: inherit;
+  line-height: 1.4;
 }
 
-.og-tags pre {
+.md-typeset .og-tags pre {
   max-height: 26rem;
+  margin: 0;
+  padding: 0.75em 1.4em;
   overflow: auto;
+  color: var(--md-code-fg-color);
+  background: var(--lupaxa-dark-blue);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: var(--lupaxa-radius-sm);
+  box-shadow: var(--lupaxa-shadow-panel);
+}
+
+.md-typeset .og-tags pre code {
+  color: inherit;
+  background: transparent;
+  border: 0;
 }
 
 @media (max-width: 50rem) {
