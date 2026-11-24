@@ -28,6 +28,9 @@ extra:
     - Where the untamed meets the engineered.
   counter_dev_id: ef410665-76d4-43fe-9e91-53f26ed1004b
   counter_dev_utcoffset: 0
+  # Cloudflare Web Analytics (omit cloudflare_analytics_token to disable).
+  # The beacon stays off in a browser that has turned Cloudflare off.
+  cloudflare_analytics_token: ac112ae8032747b992713f2cf6ec9f33
   social_image: assets/images/the-lupaxa-project-social-card.png
   social_image_width: 1280
   social_image_height: 640
@@ -153,6 +156,7 @@ extra_css:
   - assets/stylesheets/40-components/tables.css
   - assets/stylesheets/50-pages/about.css
   - assets/stylesheets/50-pages/preview.css
+  - assets/stylesheets/50-pages/privacy.css
   - assets/stylesheets/50-pages/sponsor.css
   - assets/stylesheets/90-responsive.css
   - assets/stylesheets/95-print.css
@@ -163,3 +167,5 @@ extra_javascript:
   - assets/javascript/language-preference.js
   - assets/javascript/header-active-nav.js
   - assets/javascript/preview.js
+  - assets/javascript/sponsor.js
+  - assets/javascript/counter-choice.js
